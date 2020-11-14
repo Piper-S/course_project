@@ -1,23 +1,36 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
+  function handleRStudioOnClick(port) {
+    // e.preventDefault();
+    console.log(port);
+    window.location.href="http://localhost:"+port;
+  }
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div>
+        <button onClick={() => handleRStudioOnClick(10001)}> RStudio 
+        </button>
+        <button onClick={() => handleRStudioOnClick(6080)}> Spyder </button>
+        <button > IBM SAS </button>
+        <button> Git </button>
+        <button onClick={() => handleRStudioOnClick(10000)}> Jupyter Notebook </button>
+        <button> Orange </button>
+        <button> Visual Studio Code IDE </button>
+      </div>
+      
+      <div>
+          <button> Apache Hadoop </button>
+          <button> Apache Spark </button>
+          <button> Tableau </button>
+          <button> SonarQube & SonarScanner </button>
+          <button> TensorFlow </button>
+          <button> Markdown </button>
+      </div>
+      
     </div>
   );
 }

@@ -1,0 +1,47 @@
+version: '3'
+services:
+  rstudio:
+    image: "rocker/rstudio"
+    ports: 
+      - '10001:8787'
+    environment:
+      - PASSWORD=123
+    volumes:
+      - ./:/usr/src/app
+  jupyter:
+    image: "jupyter/datascience-notebook:latest"
+    ports: 
+      - '10000:8888'
+    environment:
+      - PASSWORD=123
+    volumes:
+      - ./:/usr/src/app
+#### Spyder:
+  spyder:
+    build: ./spyder
+    ports: 
+      - '6080:6080'
+#### IBM SAS:
+
+#### Git 
+
+#### Orange 
+
+#### Visual Studio Code 
+
+#### Apache Hadoop 
+
+#### Apache Spark 
+
+#### Tableau 
+
+#### SonarQube & SonarScanner 
+
+#### Tensorflow 
+
+#### Markdown
+  myapp:
+    build: .
+    ports:
+      - "8000:3000"
+
