@@ -12,36 +12,104 @@ services:
     image: "jupyter/datascience-notebook:latest"
     ports: 
       - '10000:8888'
+    restart: always
     environment:
       - PASSWORD=123
     volumes:
       - ./:/usr/src/app
 #### Spyder:
-  spyder:
-    build: ./spyder
-    ports: 
-      - '6080:6080'
+  # spyder:
+  #   build: ./spyder
+  #   environment:
+  #     - DISPLAY=${HOSTNAME}:0
+  #   volumes:
+  #     - /tmp/.X11-unix:/tmp/.X11-unix
+  #   ports: 
+  #     - '6080:6080'
 #### IBM SAS:
-
+  # https://www.pdesas.org/Profile/Account/Login
 #### Git 
 
 #### Orange 
+  orange:
+    image: acopar/orange-docker
+    ports: 
+      - '5901:5901'
+      - '6901:6901'
+    # environment:
+    #   - DISPLAY=host.docker.internal:0
+    # volumes:
+    #   - /tmp/.X11-unix:/tmp/.X11-unix
 
 #### Visual Studio Code 
+  vscode:
+    image: elcolio/vscode
+    environment:
+      - DISPLAY=host.docker.internal:0
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
 
-#### Apache Hadoop 
+#### Apache Hadoop : sequenceiq/hadoop-docker
+  hadoop:
+    image: gvacaliuc/hadoop-docker
 
 #### Apache Spark 
-
+  spark:
+    image: bitnami/spark
 #### Tableau 
-
+    # just a link
 #### SonarQube & SonarScanner 
-
-#### Tensorflow 
+  sonarsonar:
+    image: sonarqube
+    ports: 
+      - '9000:9000'
+      - '9092:9092'
+    volumes:
+      - ./:/usr/src/app
+#### Tensorflow -> done
+  tensorflow:
+    build: ./TensorFlowFolder
+    ports: 
+      - '8888:8888'
+    volumes:
+      - ./:/usr/src/app
 
 #### Markdown
+  markdown:
+    image: alexsuch/markdown-editor:1.0.1
+    ports: 
+      - '9090:80'
+    volumes:
+      - ./:/usr/src/app
+#### word press
+  # db:
+  #   image: mysql:5.7
+  #   volumes:
+  #     - db_data:/var/lib/mysql
+  #   restart: always
+  #   environment:
+  #     MYSQL_ROOT_PASSWORD: somewordpress
+  #     MYSQL_DATABASE: wordpress
+  #     MYSQL_USER: wordpress
+  #     MYSQL_PASSWORD: wordpress
+
+  # wordpress:
+  #   depends_on:
+  #     - db
+  #   image: wordpress:latest
+  #   ports:
+  #     - "8001:80"
+  #   restart: always
+  #   environment:
+  #     WORDPRESS_DB_HOST: db:3306
+  #     WORDPRESS_DB_USER: wordpress
+  #     WORDPRESS_DB_PASSWORD: wordpress
+  #     WORDPRESS_DB_NAME: wordpress
+#### main program
   myapp:
     build: .
     ports:
       - "8000:3000"
 
+# volumes:
+#     db_data: {}      
