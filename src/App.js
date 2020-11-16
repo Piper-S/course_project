@@ -2,7 +2,7 @@ import './App.css';
 
 function App() {
 
-  function handleRStudioOnClick(port) {
+  function handleOnClick(port) {
     // e.preventDefault();
     console.log(port);
     window.location.href="http://localhost:"+port;
@@ -15,28 +15,32 @@ function App() {
   function openTableauCloud(){
     window.location.href="https://www.tableau.com/products/linux"
   }
+  var windowFeatures = "menubar=yes,toolbar=yes, location=yes,resizable=yes,scrollbars=yes,status=yes";
+  function openTerminal(port, terminal_port){
+    window.open("http://localhost:"+port+"/terminals/"+terminal_port, "_windowname", windowFeatures)
+  }
   
 
   return (
     <div>
       <div>
-        <button onClick={() => handleRStudioOnClick(10001)}> RStudio 
+        <button onClick={() => handleOnClick(10001)}> RStudio 
         </button>
-        <button onClick={() => handleRStudioOnClick(6080)}> Spyder </button>
+        <button onClick={() => handleOnClick(6080)}> Spyder </button>
         <button onClick={openSasCloud}> IBM SAS </button>
-        <button> Git </button>
-        <button onClick={() => handleRStudioOnClick(10000)}> Jupyter Notebook </button>
-        <button onClick={() => handleRStudioOnClick(6901)}>  Orange </button>
-        <button> Visual Studio Code IDE </button>
+        <button onClick={() => handleOnClick(10000)}>  Git </button>
+        <button onClick={() => handleOnClick(10000)}> Jupyter Notebook </button>
+        <button onClick={() => handleOnClick(6901)}>  Orange </button>
+        <button onClick={() => handleOnClick(8443)}> Visual Studio Code IDE </button>
       </div>
       
       <div>
-          <button> Apache Hadoop </button>
-          <button> Apache Spark </button>
+          <button onClick={() => openTerminal(9433, 1)}> Apache Hadoop </button>
+          <button onClick={() => openTerminal(9433, 2)}> Apache Spark </button>
           <button onClick={openTableauCloud}> Tableau </button>
-          <button> SonarQube & SonarScanner </button>
-          <button onClick={() => handleRStudioOnClick(10003)}> TensorFlow </button>
-          <button onClick={() => handleRStudioOnClick(9090)}> Markdown </button>
+          <button onClick={() => handleOnClick(9000)}> SonarQube & SonarScanner </button>
+          <button onClick={() => handleOnClick(9432)}> TensorFlow </button>
+          <button onClick={() => handleOnClick(9090)}> Markdown </button>
       </div>
       
     </div>

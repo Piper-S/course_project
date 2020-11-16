@@ -9,12 +9,15 @@ services:
     volumes:
       - ./:/usr/src/app
   jupyter:
-    image: "jupyter/datascience-notebook:latest"
+    image: "jupyter/datascience-notebook:9b06df75e445"
+    # environment:
+    #   - JUPYTER_TOKEN=easy
+    #   - JUPYTER_ENABLE_LAB=yes
+    environment:
+      - JUPYTER_TOKEN=easy
     ports: 
       - '10000:8888'
     restart: always
-    environment:
-      - PASSWORD=123
     volumes:
       - ./:/usr/src/app
 #### Spyder:
@@ -29,7 +32,12 @@ services:
 #### IBM SAS:
   # https://www.pdesas.org/Profile/Account/Login
 #### Git 
-
+  git:
+    image: ellerbrock/alpine-bash-git
+    # environment:
+    #   - JUPYTER_TOKEN=easy
+    volumes:
+      - ./:/usr/src/app
 #### Orange 
   orange:
     image: acopar/orange-docker
@@ -42,35 +50,52 @@ services:
     #   - /tmp/.X11-unix:/tmp/.X11-unix
 
 #### Visual Studio Code 
+  # vscode:
+  #   image: elcolio/vscode
+  #   environment:
+  #     - DISPLAY=host.docker.internal:0
+  #   volumes:
+  #     - /tmp/.X11-unix:/tmp/.X11-unix
   vscode:
-    image: elcolio/vscode
-    environment:
-      - DISPLAY=host.docker.internal:0
+    image: ghcr.io/linuxserver/code-server
+    ports:
+      - 8443:8443
+    # restart: unless-stopped
     volumes:
-      - /tmp/.X11-unix:/tmp/.X11-unix
-
+      - ./:/usr/src/app
+      # https://hub.docker.com/r/codercom/code-server
 #### Apache Hadoop : sequenceiq/hadoop-docker
-  hadoop:
-    image: gvacaliuc/hadoop-docker
-
+  # hadoop:
+  #   image: apache/hadoop-runner
+  #   volumes:
+  #     - ./:/usr/src/app
 #### Apache Spark 
+# https://github.com/jupyter/docker-stacks
   spark:
-    image: bitnami/spark
+    image: dimajix/jupyter-spark:latest
+    ports: 
+      - "9433:8888"
+    volumes:
+      - ./:/usr/src/app
 #### Tableau 
     # just a link
 #### SonarQube & SonarScanner 
-  sonarsonar:
-    image: sonarqube
-    ports: 
-      - '9000:9000'
-      - '9092:9092'
-    volumes:
-      - ./:/usr/src/app
+  # sonarsonar:
+  #   image: sonarqube
+  #   environment:
+  #   - JUPYTER_TOKEN=easy
+  #   ports: 
+  #     - '9000:9000'
+  #     - '9092:9092'
+  #   volumes:
+  #     - ./:/usr/src/app
 #### Tensorflow -> done
   tensorflow:
     build: ./TensorFlowFolder
+    environment:
+      - JUPYTER_TOKEN=easy
     ports: 
-      - '8888:8888'
+      - '9432:8888'
     volumes:
       - ./:/usr/src/app
 
