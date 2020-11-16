@@ -38,7 +38,7 @@ services:
     #   - JUPYTER_TOKEN=easy
     volumes:
       - ./:/usr/src/app
-#### Orange 
+#### Orange -> password = orange
   orange:
     image: acopar/orange-docker
     ports: 
@@ -80,15 +80,36 @@ services:
 #### Tableau 
     # just a link
 #### SonarQube & SonarScanner 
-  # sonarsonar:
-  #   image: sonarqube
+  sonarsonar:
+    image: owasp/sonarqube
+    ports: 
+      - '9000:9000'
+      - '9092:9092'
+    volumes:
+      - ./:/usr/src/app
+
+  # postgresql:
+  #   image: 'bitnami/postgresql:latest'
   #   environment:
-  #   - JUPYTER_TOKEN=easy
-  #   ports: 
-  #     - '9000:9000'
-  #     - '9092:9092'
+  #     - ALLOW_EMPTY_PASSWORD=yes
+  #     - POSTGRESQL_USER=bn_sonarqube
+  #     - POSTGRESQL_DATABASE=bitnami_sonarqube
+  #     - POSTGRESQL_PASSWORD=bitnami1234
   #   volumes:
-  #     - ./:/usr/src/app
+  #     - ./:/bitnami/postgresql
+  # sonarqube:
+  #   image: bitnami/sonarqube:latest
+  #   depends_on:
+  #     - postgresql
+  #   ports:
+  #     - '9000:9000'
+  #   environment:
+  #     - SONARQUBE_DATABASE_USER=bn_sonarqube
+  #     - SONARQUBE_DATABASE_NAME=bitnami_sonarqube
+  #     - SONARQUBE_DATABASE_PASSWORD=bitnami1234
+  #     - ALLOW_EMPTY_PASSWORD=yes
+  #   volumes:
+  #     - ./:/bitnami
 #### Tensorflow -> done
   tensorflow:
     build: ./TensorFlowFolder
