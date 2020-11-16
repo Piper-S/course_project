@@ -1,5 +1,6 @@
 version: '3'
 services:
+#### Rstudio:
   rstudio:
     image: "rocker/rstudio"
     ports: 
@@ -8,11 +9,9 @@ services:
       - PASSWORD=123
     volumes:
       - ./:/usr/src/app
+#### Jupyter:
   jupyter:
     image: "jupyter/datascience-notebook:9b06df75e445"
-    # environment:
-    #   - JUPYTER_TOKEN=easy
-    #   - JUPYTER_ENABLE_LAB=yes
     environment:
       - JUPYTER_TOKEN=easy
     ports: 
@@ -34,8 +33,6 @@ services:
 #### Git 
   git:
     image: ellerbrock/alpine-bash-git
-    # environment:
-    #   - JUPYTER_TOKEN=easy
     volumes:
       - ./:/usr/src/app
 #### Orange -> password = orange
@@ -44,11 +41,8 @@ services:
     ports: 
       - '5901:5901'
       - '6901:6901'
-    # environment:
-    #   - DISPLAY=host.docker.internal:0
-    # volumes:
-    #   - /tmp/.X11-unix:/tmp/.X11-unix
-
+    volumes:
+      - ./:/usr/src/app
 #### Visual Studio Code 
   # vscode:
   #   image: elcolio/vscode
@@ -63,14 +57,7 @@ services:
     # restart: unless-stopped
     volumes:
       - ./:/usr/src/app
-      # https://hub.docker.com/r/codercom/code-server
-#### Apache Hadoop : sequenceiq/hadoop-docker
-  # hadoop:
-  #   image: apache/hadoop-runner
-  #   volumes:
-  #     - ./:/usr/src/app
-#### Apache Spark 
-# https://github.com/jupyter/docker-stacks
+#### Apache Hadoop &Apache Spark 
   spark:
     image: dimajix/jupyter-spark:latest
     ports: 
@@ -87,29 +74,6 @@ services:
       - '9092:9092'
     volumes:
       - ./:/usr/src/app
-
-  # postgresql:
-  #   image: 'bitnami/postgresql:latest'
-  #   environment:
-  #     - ALLOW_EMPTY_PASSWORD=yes
-  #     - POSTGRESQL_USER=bn_sonarqube
-  #     - POSTGRESQL_DATABASE=bitnami_sonarqube
-  #     - POSTGRESQL_PASSWORD=bitnami1234
-  #   volumes:
-  #     - ./:/bitnami/postgresql
-  # sonarqube:
-  #   image: bitnami/sonarqube:latest
-  #   depends_on:
-  #     - postgresql
-  #   ports:
-  #     - '9000:9000'
-  #   environment:
-  #     - SONARQUBE_DATABASE_USER=bn_sonarqube
-  #     - SONARQUBE_DATABASE_NAME=bitnami_sonarqube
-  #     - SONARQUBE_DATABASE_PASSWORD=bitnami1234
-  #     - ALLOW_EMPTY_PASSWORD=yes
-  #   volumes:
-  #     - ./:/bitnami
 #### Tensorflow -> done
   tensorflow:
     build: ./TensorFlowFolder
@@ -119,7 +83,6 @@ services:
       - '9432:8888'
     volumes:
       - ./:/usr/src/app
-
 #### Markdown
   markdown:
     image: alexsuch/markdown-editor:1.0.1
@@ -127,35 +90,8 @@ services:
       - '9090:80'
     volumes:
       - ./:/usr/src/app
-#### word press
-  # db:
-  #   image: mysql:5.7
-  #   volumes:
-  #     - db_data:/var/lib/mysql
-  #   restart: always
-  #   environment:
-  #     MYSQL_ROOT_PASSWORD: somewordpress
-  #     MYSQL_DATABASE: wordpress
-  #     MYSQL_USER: wordpress
-  #     MYSQL_PASSWORD: wordpress
-
-  # wordpress:
-  #   depends_on:
-  #     - db
-  #   image: wordpress:latest
-  #   ports:
-  #     - "8001:80"
-  #   restart: always
-  #   environment:
-  #     WORDPRESS_DB_HOST: db:3306
-  #     WORDPRESS_DB_USER: wordpress
-  #     WORDPRESS_DB_PASSWORD: wordpress
-  #     WORDPRESS_DB_NAME: wordpress
 #### main program
   myapp:
     build: .
     ports:
       - "8000:3000"
-
-# volumes:
-#     db_data: {}      
