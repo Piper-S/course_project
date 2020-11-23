@@ -25,18 +25,20 @@ docker-compose up --build
 access it through **localhost:8000** in browser
 
 
-![alt text](https://github.com/Piper-S/course_project/blob/master/images/Rstudio.png)
+![alt text](https://github.com/Piper-S/course_project/blob/master/images/UI.png)
 
 
 ### Rstudio 
 
 User log in has been disabled, you can remove the enviroment variable in docker-compose.yml to enable it.
 
-### ![Screen Shot 2020-11-22 at 7.26.29 PM](/Users/sue/Public/cs1660_CC/option1/ds-toolbox/images/Screen Shot 2020-11-22 at 7.26.29 PM.png)Jupyter Notebook
+![alt text](https://github.com/Piper-S/course_project/blob/master/images/Rstudio.png)
+
+### Jupyter Notebook
 
 **token = easy**
 
-![Screen Shot 2020-11-22 at 7.27.16 PM](/Users/sue/Public/cs1660_CC/option1/ds-toolbox/images/Screen Shot 2020-11-22 at 7.27.16 PM.png)
+![alt text](https://github.com/Piper-S/course_project/blob/master/images/jupyter.png)
 
 ### Spyder
 
@@ -46,7 +48,7 @@ Deleted - implemented jupyter
 
 IBM SAS official website
 
-![Screen Shot 2020-11-22 at 7.27.55 PM](/Users/sue/Public/cs1660_CC/option1/ds-toolbox/images/Screen Shot 2020-11-22 at 7.27.55 PM.png)
+![alt text](https://github.com/Piper-S/course_project/blob/master/images/sas.png)
 
 ### Git
 
@@ -58,19 +60,19 @@ Git will be opened by jupyter notebook terminal, and you can run command below a
 git clone https://github.com/Piper-S/course_project.git
 ```
 
-![Screen Shot 2020-11-22 at 7.28.50 PM](/Users/sue/Public/cs1660_CC/option1/ds-toolbox/images/Screen Shot 2020-11-22 at 7.28.50 PM.png)
+![alt text](https://github.com/Piper-S/course_project/blob/master/images/git.png)
 
 ### Orange
 
 Password = orange
 
-![Screen Shot 2020-11-22 at 7.32.33 PM](/Users/sue/Public/cs1660_CC/option1/ds-toolbox/images/Screen Shot 2020-11-22 at 7.32.33 PM.png)
+![alt text](https://github.com/Piper-S/course_project/blob/master/images/orange.png)
 
 ### Vscode
 
 It's an online vscode IDE that you can create and edit code scipts.
 
-![Screen Shot 2020-11-22 at 7.29.51 PM](/Users/sue/Public/cs1660_CC/option1/ds-toolbox/images/Screen Shot 2020-11-22 at 7.29.51 PM.png)
+![alt text](https://github.com/Piper-S/course_project/blob/master/images/vscode.png)
 
 ### Apache Hadoop
 
@@ -82,7 +84,7 @@ run command below to see namenode and datanode
 jps
 ```
 
-![Screen Shot 2020-11-22 at 7.31.36 PM](/Users/sue/Public/cs1660_CC/option1/ds-toolbox/images/Screen Shot 2020-11-22 at 7.31.36 PM.png)
+![alt text](https://github.com/Piper-S/course_project/blob/master/images/hadoop.png)
 
 ### Apache Spark
 
@@ -92,13 +94,13 @@ it will open up a jupyter terminal where you can run command below to start a sp
 pyspark
 ```
 
-![Screen Shot 2020-11-22 at 7.32.15 PM](/Users/sue/Public/cs1660_CC/option1/ds-toolbox/images/Screen Shot 2020-11-22 at 7.32.15 PM.png)
+![alt text](https://github.com/Piper-S/course_project/blob/master/images/spark.png)
 
 ### Tableau
 
 Our toolbox will guide you to the tableau official website
 
-![Screen Shot 2020-11-22 at 7.32.55 PM](/Users/sue/Public/cs1660_CC/option1/ds-toolbox/images/Screen Shot 2020-11-22 at 7.32.55 PM.png)
+![alt text](https://github.com/Piper-S/course_project/blob/master/images/tableau.png)
 
 ### Sonarqube & sonar scanner
 
@@ -108,7 +110,7 @@ Password: admin
 
 (you can change it to whatever you like after logged in)
 
-![Screen Shot 2020-11-22 at 7.33.24 PM](/Users/sue/Public/cs1660_CC/option1/ds-toolbox/images/Screen Shot 2020-11-22 at 7.33.24 PM.png)
+![alt text](https://github.com/Piper-S/course_project/blob/master/images/sonarqube.png)
 
 ### Tensorflow
 
@@ -118,11 +120,11 @@ it will open up a jupyter terminal, and you can try the command below to ensure 
 pip show tensorflow
 ```
 
-![Screen Shot 2020-11-22 at 7.34.36 PM](/Users/sue/Public/cs1660_CC/option1/ds-toolbox/images/Screen Shot 2020-11-22 at 7.34.36 PM.png)
+![alt text](https://github.com/Piper-S/course_project/blob/master/images/tensorflow.png)
 
 ### Markdown
 
 Please click the tab in the left side to see previous notes or add new notes.
 
-![Screen Shot 2020-11-22 at 7.35.00 PM](/Users/sue/Public/cs1660_CC/option1/ds-toolbox/images/Screen Shot 2020-11-22 at 7.35.00 PM.png)
+![alt text](https://github.com/Piper-S/course_project/blob/master/images/markdown.png)
 
