@@ -6,7 +6,7 @@ NOTE: please enable more memory in docker dashboard so it will run faster. (~32 
 
 ### Video on OneDrive
 
-https://pitt.sharepoint.com/sites/cs1660_course_project
+https://pitt.sharepoint.com/sites/cs1660_course_project/Shared%20Documents/Forms/AllItems.aspx
 
 ### Install code package
 
