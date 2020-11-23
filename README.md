@@ -1,6 +1,10 @@
 # Data Science Toolbox
 
-NOTE: this is individual work all images used from dockerhub is cited :)
+NOTE: this is an individual work. all images used from dockerhub is cited :)
+
+### Video on OneDrive
+
+https://pitt.sharepoint.com/sites/cs1660_course_project
 
 #### Install code package
 
@@ -20,7 +24,7 @@ access it through **localhost:8000** in browser
 
 #### Rstudio 
 
-please use your own rstudio username and passwor to log in
+Please use your own rstudio username and passwor to log in
 
 #### Jupyter
 
@@ -32,31 +36,33 @@ Deleted - implemented jupyter
 
 #### IBM SAS
 
-Our toolbox will guide you to the IBM SAS official website
+IBM SAS official website
 
 #### Git
 
-Git is opened by jupyter notebook terminal, and you can run 
+Git will be opened by jupyter notebook terminal, and you can run command below as a functional test. After that you should be able to see all files in this repository.
 
-```
+```git
 git clone https://github.com/Piper-S/course_project.git
 ```
 
-as a functional test. After that you should be able to see all files in this repository.
-
 #### Orange
 
-Password: orange
-
-It's running at a noVNC terminal with Orange installed.
+Password = orange
 
 #### Vscode
 
-It's an online ide that you can create and edit code 
+It's an online vscode IDE that you can create and edit code scipts.
 
 #### Apache Hadoop
 
+run command below to see namenode and datanode
 
+```bash
+jps
+```
+
+The way how you can upload file is somehow hard, but you can use installed word count.jar to test it.
 
 #### Apache Spark
 
@@ -91,8 +97,6 @@ Username: admin
 Password: admin
 
 (you can change it to whatever you like after logged in)
-
-docker run -it --rm -p 5901:5901 -p 6901:6901 -p 8042 -p 8088 -p 19888 -p 50070 -p 50075 myvnc:latest
 
 docker run -it --rm -p 5901:5901 -p 6901:6901 -p 8042 -p 8088 -p 19888 -p 50070 -p 50075 myvnc:latest
 
