@@ -24,9 +24,9 @@ docker-compose up --build
 
 access it through **localhost:8000** in browser
 
-```
+
 ![alt text](https://github.com/Piper-S/course_project/blob/master/images/Rstudio.png)
-```
+
 
 ### Rstudio 
 
