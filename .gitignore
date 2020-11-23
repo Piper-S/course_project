@@ -22,3 +22,10 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# intermdediate files
+/mynovnc
+/mydockervnc
+hadoop.env
+/Hadoop
+supervisord.log

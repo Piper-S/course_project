@@ -2,6 +2,8 @@
 
 NOTE: this is an individual work. all images used from dockerhub is cited :)
 
+NOTE: please enable more memory in docker dashboard so it will run faster. (~32 GB in total)
+
 ### Video on OneDrive
 
 https://pitt.sharepoint.com/sites/cs1660_course_project
