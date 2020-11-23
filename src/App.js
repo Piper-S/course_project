@@ -28,19 +28,19 @@ function App() {
       <h1> CS1660 Data Science Toolbox </h1>
       <ul>
         <li><button onClick={() => handleOnClick(10001)}> RStudio </button></li>
-        <li><button onClick={() => handleOnClick(6080)}> Spyder - deleted </button></li>
+        {/* <li><button onClick={() => handleOnClick(6080)}> Spyder - deleted </button></li> */}
         <li><button onClick={openSasCloud}> IBM SAS </button></li>
         <li><button onClick={() => openTerminal(10000, 3)}>  Git </button></li>
         <li><button onClick={() => handleOnClick(10000)}> Jupyter Notebook </button></li>
-        <li><button onClick={() => handleOnClick(6901)}>  Orange* </button></li>
+        <li><button onClick={() => handleOnClick(6901)}>  Orange </button></li>
         <li><button onClick={() => handleOnClick(8443)}> Visual Studio Code IDE </button></li>
       </ul>
       <ul>
-        <li><button onClick={() => openTerminal(9433, 1)}> Apache Hadoop </button></li>
+        <li><button onClick={() => handleOnClick(10009)}> Apache Hadoop </button></li>
         <li><button onClick={() => openTerminal(9433, 2)}> Apache Spark </button></li>
         <li><button onClick={openTableauCloud}> Tableau </button></li>
-        <li><button onClick={() => handleOnClick(9000)}> SonarQube & SonarScanner* </button></li>
-        <li><button onClick={() => handleOnClick(9432)}> TensorFlow </button></li>
+        <li><button onClick={() => handleOnClick(10010)}> SonarQube & SonarScanner* </button></li>
+        <li><button onClick={() => openTerminal(9432, 1)}> TensorFlow </button></li>
         <li><button onClick={() => handleOnClick(9090)}> Markdown </button></li>
       </ul>
       

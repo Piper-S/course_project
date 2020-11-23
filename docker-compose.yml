@@ -1,12 +1,20 @@
 version: '3'
+
+# networks:
+#   mynetwork:
+#     ipam:
+#       config:
+#         - subnet: 172.20.0.0/24
+
 services:
-#### Rstudio:
+### Rstudio:
   rstudio:
     image: "rocker/rstudio"
     ports: 
       - '10001:8787'
     environment:
-      - PASSWORD=123
+      DISABLE_AUTH: "true"
+      # - PASSWORD=123
     volumes:
       - ./:/usr/src/app
 #### Jupyter:
@@ -57,7 +65,7 @@ services:
     # restart: unless-stopped
     volumes:
       - ./:/usr/src/app
-#### Apache Hadoop &Apache Spark 
+### Apache Hadoop &Apache Spark 
   spark:
     image: dimajix/jupyter-spark:latest
     ports: 
@@ -65,16 +73,17 @@ services:
     volumes:
       - ./:/usr/src/app
 #### Tableau 
-    # just a link
+    # a link
 #### SonarQube & SonarScanner 
   sonarsonar:
     image: owasp/sonarqube
+    # image: zaquestion/sonarqube-python
     ports: 
-      - '9000:9000'
+      - '10010:9000'
       - '9092:9092'
     volumes:
       - ./:/usr/src/app
-#### Tensorflow -> done
+#### Tensorflow -> done pip show tensorflow
   tensorflow:
     build: ./TensorFlowFolder
     environment:
@@ -90,8 +99,74 @@ services:
       - '9090:80'
     volumes:
       - ./:/usr/src/app
-#### main program
+# vde2020
+  hadoop:
+    image: pipers/myvnc
+    container_name: namenode
+    ports: 
+      - "10008:5901"
+      - "10009:6901"
+      - "8042"
+      - "8088"
+      - "19888"
+      - "50070"
+      - "50075"
+#     environment:
+#       - CLUSTER_NAME=test
+#     env_file:
+#       - ./hadoop.env
+#     # volumes:
+#     #   - ./:/usr/src/app
+#   datanode:
+#     image: bde2020/hadoop-datanode:2.0.0-hadoop3.2.1-java8
+#     container_name: datanode
+#     restart: always
+#     volumes:
+#       - hadoop_datanode:/hadoop/dfs/data
+#     environment:
+#       SERVICE_PRECONDITION: "namenode:9870"
+#     env_file:
+#       - ./hadoop.env
+  
+#   resourcemanager:
+#     image: bde2020/hadoop-resourcemanager:2.0.0-hadoop3.2.1-java8
+#     container_name: resourcemanager
+#     restart: always
+#     environment:
+#       SERVICE_PRECONDITION: "namenode:9000 namenode:9870 datanode:9864"
+#     env_file:
+#       - ./hadoop.env
+
+#   nodemanager1:
+#     image: bde2020/hadoop-nodemanager:2.0.0-hadoop3.2.1-java8
+#     container_name: nodemanager
+#     restart: always
+#     environment:
+#       SERVICE_PRECONDITION: "namenode:9000 namenode:9870 datanode:9864 resourcemanager:8088"
+#     env_file:
+#       - ./hadoop.env
+  
+#   historyserver:
+#     image: bde2020/hadoop-historyserver:2.0.0-hadoop3.2.1-java8
+#     container_name: historyserver
+#     restart: always
+#     environment:
+#       SERVICE_PRECONDITION: "namenode:9000 namenode:9870 datanode:9864 resourcemanager:8088"
+#     volumes:
+#       - hadoop_historyserver:/hadoop/yarn/timeline
+#     env_file:
+#       - ./hadoop.env
+  
+# volumes:
+#   hadoop_namenode:
+#   hadoop_datanode:
+#   hadoop_historyserver:
+
+### main program
   myapp:
     build: .
     ports:
       - "8000:3000"
+    # networks:
+    #   mynetwork:
+    #     ipv4_address: 172.20.0.8
