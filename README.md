@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+# Data Science Toolbox
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#### Install code package
 
-## Available Scripts
+```bash
+git clone https://github.com/Piper-S/course_project.git
+```
 
-In the project directory, you can run:
+#### Run docker compose
 
-### `npm start`
+```bash
+docker-compose up --build
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+#### Now your data science toolbox is running!
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+access it through localhost:8000 in browser
 
-### `npm test`
+#### Rstudio 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Jupyter
 
-### `npm run build`
+#### Spyder
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### IBM SAS
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### Git
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### Orange
 
-### `npm run eject`
+#### Vscode
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+#### Apache Hadoop
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Apache Spark
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+#### Tableau
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+#### Tensorflow
 
-## Learn More
+#### Markdown
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+docker run -it --rm -p 5901:5901 -p 6901:6901 -p 8042 -p 8088 -p 19888 -p 50070 -p 50075 myvnc:latest
