@@ -26,7 +26,7 @@ access it through **localhost:8000** in browser
 
 ### Rstudio 
 
-
+User log in has been disabled, you can remove the enviroment variable in docker-compose.yml to enable it.
 
 ### Jupyter Notebook
 
@@ -58,13 +58,15 @@ It's an online vscode IDE that you can create and edit code scipts.
 
 ### Apache Hadoop
 
+Password: vncpassword
+
 run command below to see namenode and datanode
 
 ```bash
 jps
 ```
 
-The way how you can upload file is somehow hard, but you can use installed word count.jar to test it.
+
 
 ### Apache Spark
 
@@ -80,6 +82,14 @@ pyspark
 
 Our toolbox will guide you to the tableau official website
 
+### Sonarqube & sonar scanner
+
+Username: admin
+
+Password: admin
+
+(you can change it to whatever you like after logged in)
+
 ### Tensorflow
 
 it will open up a jupyter terminal, and you can try the command below to ensure it's working
@@ -90,19 +100,5 @@ pip show tensorflow
 
 ### Markdown
 
-It's a lightweight markdown, please click the tab in the left side to see previous notes or add new notes.
-
-### Sonarqube & sonar scanner
-
-Username: admin
-
-Password: admin
-
-(you can change it to whatever you like after logged in)
-
-
-
-
-
-docker run -it --rm -p 5901:5901 -p 6901:6901 -p 8042 -p 8088 -p 19888 -p 50070 -p 50075 myvnc:latest
+Please click the tab in the left side to see previous notes or add new notes.
 

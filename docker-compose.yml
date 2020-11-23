@@ -1,11 +1,5 @@
 version: '3'
 
-# networks:
-#   mynetwork:
-#     ipam:
-#       config:
-#         - subnet: 172.20.0.0/24
-
 services:
 ### Rstudio:
   rstudio:
@@ -17,6 +11,7 @@ services:
       # - PASSWORD=123
     volumes:
       - ./:/usr/src/app
+
 #### Jupyter:
   jupyter:
     image: "jupyter/datascience-notebook:9b06df75e445"
@@ -27,6 +22,7 @@ services:
     restart: always
     volumes:
       - ./:/usr/src/app
+
 #### Spyder:
   # spyder:
   #   build: ./spyder
@@ -36,13 +32,16 @@ services:
   #     - /tmp/.X11-unix:/tmp/.X11-unix
   #   ports: 
   #     - '6080:6080'
+
 #### IBM SAS:
   # https://www.pdesas.org/Profile/Account/Login
+
 #### Git 
   git:
     image: ellerbrock/alpine-bash-git
     volumes:
       - ./:/usr/src/app
+
 #### Orange -> password = orange
   orange:
     image: acopar/orange-docker
@@ -65,7 +64,7 @@ services:
     # restart: unless-stopped
     volumes:
       - ./:/usr/src/app
-### Apache Hadoop &Apache Spark 
+### Apache Spark 
   spark:
     image: dimajix/jupyter-spark:latest
     ports: 
@@ -99,7 +98,7 @@ services:
       - '9090:80'
     volumes:
       - ./:/usr/src/app
-# vde2020
+# hadoop
   hadoop:
     image: pipers/myvnc
     container_name: namenode
@@ -117,6 +116,3 @@ services:
     build: .
     ports:
       - "8000:3000"
-    # networks:
-    #   mynetwork:
-    #     ipv4_address: 172.20.0.8
